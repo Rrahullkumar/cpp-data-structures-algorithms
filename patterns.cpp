@@ -62,6 +62,7 @@ int main()
 
 
 
+
     /*
     1
     22
@@ -78,14 +79,15 @@ int main()
     //     }
     //     cout<<endl;
     // }
+   
     
 
     /*
      *  *  *  *  * 
-    *  *  *  * 
-    *  *  * 
-    *  * 
-    * 
+     *  *  *  * 
+     *  *  * 
+     *  * 
+     * 
     */
     // for (int i = 5; i > 0; i--)
     // {
@@ -141,7 +143,6 @@ int main()
       ***
        *
     */
-
     int n=5;
     for (int row= 1; row <= n; row++)
     {
@@ -154,10 +155,8 @@ int main()
             cout<<"*";
         }
         cout<<endl;
-        
+            
     }
-
-    
 
     return 0;
 }
