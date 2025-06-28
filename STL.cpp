@@ -47,7 +47,6 @@ int main(){
 }
 */
 
-
 // Vectors
 /*
 int vectorExample(){
@@ -56,7 +55,7 @@ int vectorExample(){
     // vector<int> a;
     // a.push_back(1);
     // a.emplace_back(10);
-    // cout << a[0] << endl;       
+    // cout << a[0] << endl;
     // cout << a[1] << endl;
 
     // case 2:
@@ -82,6 +81,7 @@ int main(){
 */
 
 //=========================== Itrators=====================
+/*
 void ItratorExample(){
     vector<pair<int,pair<int,int>>> a;
     a.push_back({20, {10,15}});
@@ -98,8 +98,25 @@ void ItratorExample(){
                 it is not used much
             3. a.rbegin(); it will point at the last element {20,10,15}<-- here at 15 if we do i++ then it will come to 10 (we don't use it much)
     */
-}
 
-int main(){
-    ItratorExample();
+//     }
+
+// int main(){
+//     ItratorExample();
+// }
+
+void ItratorExample2(vector<pair<int, pair<int, int>>> a)
+{
+    for (auto i = a.begin(); i != a.end(); ++i)
+    {
+        cout << (*i).first << " " << (*i).second.first << " " << (*i).second.second << endl;
+        cout << endl;
+    }
+}
+int main()
+{
+    vector<pair<int, pair<int, int>>> myData = {
+        {20, {10, 15}},
+        {30, {40, 50}}};
+    ItratorExample2(myData);
 }
