@@ -1,5 +1,8 @@
 #include <iostream>
 #include <vector>
+#include<stack>
+#include<queue>
+
 
 using namespace std;
 
@@ -105,18 +108,124 @@ void ItratorExample(){
 //     ItratorExample();
 // }
 
-void ItratorExample2(vector<pair<int, pair<int, int>>> a)
-{
-    for (auto i = a.begin(); i != a.end(); ++i)
-    {
-        cout << (*i).first << " " << (*i).second.first << " " << (*i).second.second << endl;
-        cout << endl;
-    }
+// void ItratorExample2(vector<pair<int, pair<int, int>>> a)
+// {
+//     for (auto i = a.begin(); i != a.end(); ++i)
+//     {
+//         cout << (*i).first << " " << (*i).second.first << " " << (*i).second.second << endl;
+//         cout << endl;
+//     }
+// }
+// int main()
+// {
+//     vector<pair<int, pair<int, int>>> myData = {
+//         {20, {10, 15}},
+//         {30, {40, 50}}};
+//     ItratorExample2(myData);
+// }
+
+
+/*
+    Notes: if we want to delete element at any position we use a.erase()
+      SYNTAX: .erase(start, end)
+            FOR EXAMPLE 
+
+            {20,10,15,25,35}
+            now suppose we need to delete 10,15 so this is how we can do it
+            a.erase(a.begin()+1, a.begin()+3)
+
+
+    // Insert function
+    if we want to insert somthing at any position we need to use
+    
+    .insert(position,data)
+
+    For example:  {20,10,15,25,35}
+    a.insert(a.begin()+1,5)
+
+    //output: {20,5,10,15,25,35}
+*/
+
+
+//================ Stack================
+// LIFO
+/*
+int explainStack(){
+    stack<int> st;
+    st.push(1);    //{1}
+    st.push(5);     //{5,1}
+    st.push(10);    //{10,5,1}
+    st.push(15);    //{15,10,5,1}
+    st.emplace(20); //{20,15,10,5,1}
+
+    cout<<st.top()<<endl;
+    cout<<st.size()<<endl;
+    cout<<st.empty()<<endl;      //boolean value
+};
+
+int main(){
+    explainStack();
 }
-int main()
-{
-    vector<pair<int, pair<int, int>>> myData = {
-        {20, {10, 15}},
-        {30, {40, 50}}};
-    ItratorExample2(myData);
+*/
+
+
+
+// >>>>>>>>>>>>>>..QUEUE..<<<<<<<<<<<<<<<
+//FIFO
+/*
+int explainQueue(){
+    queue<int>q;
+    q.push(50);     //{50}
+    q.push(100);    //{50,100}
+    q.emplace(150); //{50,100,150}
+
+    cout<<q.back()<<endl;
+    q.back()+=50;
+    cout<<q.back() <<endl;
+    cout<<q.front()<<endl;
+    q.pop();      //it will delete the first element
+    cout<<q.front()<<endl;
+
+
+    //size swap, empty etc. are same as stack
 }
+int main(){
+    explainQueue();
+}
+*/
+
+
+//-------------------priority queue----------------
+//NOTE: in pq largest value stays at the top 
+/*
+int explainPQ(){
+    priority_queue<int>pq;
+    pq.push(1);  
+    pq.push(10);
+    pq.push(5);
+    pq.push(80);
+    pq.push(15);
+    //{80 15 10 5 1}   (also known as max heap)
+
+    cout<<pq.top()<<endl;      //prints 80
+    pq.pop();          //top most element will be poped same as queue
+    cout<<pq.top()<<endl;
+
+    //size, swap , empty same as previous other function 
+
+    //what if we want minimum element at top in pq? (also known as min heap)
+    priority_queue<int, vector<int>,greater<int>> p;
+    p.push(1);  
+    p.push(10);
+    p.push(5);
+    p.push(80);
+    p.push(15);
+
+    cout<<p.top();     //prints 1
+
+}
+
+int main(){
+    explainPQ();
+}
+*/
