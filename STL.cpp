@@ -2,8 +2,8 @@
 #include <vector>
 #include<stack>
 #include<queue>
-
-
+#include<set>
+#include<map>
 using namespace std;
 
 /*
@@ -228,4 +228,62 @@ int explainPQ(){
 int main(){
     explainPQ();
 }
+*/ 
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sets!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// sets are alwayys sortes and unique
+/*
+int explainSet(){
+    set<int>s;
+    s.insert(1);    //{1}  
+    s.insert(2);   //{1,2}
+    s.emplace(2);   //{1,2}
+    s.insert(3);    //{1,2,3}
+    s.emplace(4);   //{1,2,3,4}
+
+    // auto i = s.find(3); //it will give 3 as 3 is present here //{1,2,3,4}
+    
+    // auto i = s.find(6);   //it will give value right after 4 i mean set.end() //{1,2,3,4}
+
+    s.erase(2);  //erases 2
+
+    int ct = s.count(2);          //as set is unique it will either give 1 occurance or 0 
+
+    // NOTE: there is unordered set too  it has randomized order
+    // unordered_set<int> st;
+    
+}
+int main(){
+    explainSet();
+}
 */
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>Map<<<<<<<<<<<<<<<<<<<
+// it is just like key value pairs.. key will always be unique and key will be stored in sorted order
+
+int explainMap(){
+    //Case 1:
+    map<int,int> m;
+
+    m[1]=2;   //{1,2}   ---- this means at key 1 store the value 2
+    m.insert({2,4});   // --this also means at key 2 store the value 4    ...we can use emplace also
+    cout<<m[1];
+    cout<<m[5]; //if something doesnot exist it will give 0 or null
+
+
+    //case 2:
+    // map<pair<int,int>,int> m;            //this means 2 keys and 1 value
+    // m[{2,3}]=10 ;                  //this means their are 2 keys 2,3 and value = 10
+
+    //this is for each loop 
+    // for (auto i : m) {
+    //     cout << "(" << i.first.first << ", " << i.first.second << ") : " << i.second << endl;
+    // }
+
+    
+
+}
+int main(){
+    explainMap();
+}
