@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
-#include<stack>
-#include<queue>
-#include<set>
-#include<map>
+#include <stack>
+#include <queue>
+#include <set>
+#include <map>
+#include <algorithm>
+
 using namespace std;
 
 /*
@@ -124,11 +126,10 @@ void ItratorExample(){
 //     ItratorExample2(myData);
 // }
 
-
 /*
     Notes: if we want to delete element at any position we use a.erase()
       SYNTAX: .erase(start, end)
-            FOR EXAMPLE 
+            FOR EXAMPLE
 
             {20,10,15,25,35}
             now suppose we need to delete 10,15 so this is how we can do it
@@ -137,7 +138,7 @@ void ItratorExample(){
 
     // Insert function
     if we want to insert somthing at any position we need to use
-    
+
     .insert(position,data)
 
     For example:  {20,10,15,25,35}
@@ -145,7 +146,6 @@ void ItratorExample(){
 
     //output: {20,5,10,15,25,35}
 */
-
 
 //================ Stack================
 // LIFO
@@ -168,10 +168,8 @@ int main(){
 }
 */
 
-
-
 // >>>>>>>>>>>>>>..QUEUE..<<<<<<<<<<<<<<<
-//FIFO
+// FIFO
 /*
 int explainQueue(){
     queue<int>q;
@@ -194,13 +192,12 @@ int main(){
 }
 */
 
-
 //-------------------priority queue----------------
-//NOTE: in pq largest value stays at the top 
+// NOTE: in pq largest value stays at the top
 /*
 int explainPQ(){
     priority_queue<int>pq;
-    pq.push(1);  
+    pq.push(1);
     pq.push(10);
     pq.push(5);
     pq.push(80);
@@ -211,11 +208,11 @@ int explainPQ(){
     pq.pop();          //top most element will be poped same as queue
     cout<<pq.top()<<endl;
 
-    //size, swap , empty same as previous other function 
+    //size, swap , empty same as previous other function
 
     //what if we want minimum element at top in pq? (also known as min heap)
     priority_queue<int, vector<int>,greater<int>> p;
-    p.push(1);  
+    p.push(1);
     p.push(10);
     p.push(5);
     p.push(80);
@@ -228,40 +225,39 @@ int explainPQ(){
 int main(){
     explainPQ();
 }
-*/ 
+*/
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sets!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // sets are alwayys sortes and unique
 /*
 int explainSet(){
     set<int>s;
-    s.insert(1);    //{1}  
+    s.insert(1);    //{1}
     s.insert(2);   //{1,2}
     s.emplace(2);   //{1,2}
     s.insert(3);    //{1,2,3}
     s.emplace(4);   //{1,2,3,4}
 
     // auto i = s.find(3); //it will give 3 as 3 is present here //{1,2,3,4}
-    
+
     // auto i = s.find(6);   //it will give value right after 4 i mean set.end() //{1,2,3,4}
 
     s.erase(2);  //erases 2
 
-    int ct = s.count(2);          //as set is unique it will either give 1 occurance or 0 
+    int ct = s.count(2);          //as set is unique it will either give 1 occurance or 0
 
     // NOTE: there is unordered set too  it has randomized order
     // unordered_set<int> st;
-    
+
 }
 int main(){
     explainSet();
 }
 */
 
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>Map<<<<<<<<<<<<<<<<<<<
 // it is just like key value pairs.. key will always be unique and key will be stored in sorted order
-
+/*
 int explainMap(){
     //Case 1:
     map<int,int> m;
@@ -276,14 +272,69 @@ int explainMap(){
     // map<pair<int,int>,int> m;            //this means 2 keys and 1 value
     // m[{2,3}]=10 ;                  //this means their are 2 keys 2,3 and value = 10
 
-    //this is for each loop 
+    //this is for each loop
     // for (auto i : m) {
     //     cout << "(" << i.first.first << ", " << i.first.second << ") : " << i.second << endl;
     // }
 
-    
+
 
 }
 int main(){
     explainMap();
+}
+*/
+/*Note: their is something known as multimap too -> same as map just the difference is they can store multiplekeys
+// int explainMultimap(){
+//     //also m[key] cannot be used
+// }
+also their is unorderedMap too it is also same as map i.e it will also stpre unique keys just the difference is the keys are not in sorted order
+*/
+
+// >>>>>>>>>>>>>SOME IMPORTANT ALGORITHMS<<<<<<<<<<<<<<<<<<<
+
+/*
+-before studying any algorithm let's see sort() in cpp \addtogroup
+    suppose we have  a={1,5,3,2}
+     and we use sort(a, a+4) ...basically it's like starting iteratotr, and last iterator  ..so all the elements will be sorted and the output will be {1,2,3,5}
+-ptbn -> in the above case we don't need to use merge sort, bubble sort, selection sort etc.
+    if we a want to arrange in descending order the we can use it like
+    sort(a,a+n,greater<int>)
+ */
+
+//  now what if i want to sort it in my way
+
+bool comp(pair<int, int> p1, pair<int, int> p2)
+    {
+        if (p1.second < p2.second)
+            return true;
+        if (p1.second > p2.second)
+            return false;
+
+        // if they are smae
+        if (p1.first > p2.first)
+            return true;
+        return false;
+    }
+
+int explainAlgo()
+{
+    // suppose we have a container of array and i want to arrange it in increasing second element
+    // and if the second elem is same sort according to the first element but in decreasing order
+
+    
+    pair<int, int> a[] = {{1, 2}, {2, 1}, {4, 1}};
+
+    // final result should be like   {4,1},{2,1},{1,2}
+    sort(a, a + 3, comp); // comp is comperators line no. 307
+
+    for (int i = 0; i < 3; i++) {
+        cout << "{" << a[i].first << "," << a[i].second << "} ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    explainAlgo();
 }
