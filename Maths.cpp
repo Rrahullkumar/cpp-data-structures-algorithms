@@ -1,5 +1,5 @@
-#include<iostream>
-#include<math.h>
+#include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -16,10 +16,10 @@ int main(){
     int lstdgt= n%10;
     // cout<<lstdgt;
     n=n/10;
-    revn= revn*10 + lstdgt;    
+    revn= revn*10 + lstdgt;
    }
    cout<<revn <<endl;
-   
+
 //    for checking palindrome
    if (dup == revn)
    {
@@ -27,12 +27,13 @@ int main(){
    } else{
     cout<<"False";
    }
-   
-   
+
+
 }
 */
 
 // armstrong number
+/*
 int main(){
     int n=1634;
     int sum =0;
@@ -51,5 +52,63 @@ int main(){
     } else {
         cout<<"It is not a armstrong number";
     }
+
+}
+*/
+
+// Print all divisors
+/*
+int main()
+{
+    int n = 36;
+    for (int i = 1; i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            cout << i;
+        }
+    }
+}
+*/
+
+// check prime
+/*
+int main(){
+
+
+    int n=7;
+    bool isprime= true;
+
+    for (int i = 2; i*i <= n; i++) //use i <= sqrt(n) for better efficincy or i*i <=n
+    {
+        if (n%i == 0)
+        {
+            isprime = false;
+        }
     
+    }
+   cout<<isprime;
+}
+*/
+
+// GCD/HCF
+
+int main(){
+
+    int n1=12;
+    int n2=9;
+
+    int gcd = 0;
+
+    for (int i = 1; i <= min(n1,n2); i++)
+    {
+        if (n1%i==0 && n2%i==0)
+        {
+            gcd = i;
+        }
+        
+    }
+    cout<<gcd;
+    
+
 }
