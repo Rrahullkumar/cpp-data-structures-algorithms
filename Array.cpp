@@ -22,15 +22,16 @@ int main(){
 */
 
 // finding second largest in an array
-int arr[5]= {10,5,60,8,100};
-int grt=arr[0];
-int slarge= -1;
+/*
+int arr[6]= {10,5,60,8,20,30};
+int grt=arr[0];                                    
+int slarge= 0;
 
 int main(){
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 6; i++)
     {
         cout<<arr[i]<<" "<<endl;
-        if (arr[i]>arr[0])
+        if (arr[i]>grt)
         {
             slarge = grt;
             grt = arr[i];
@@ -40,10 +41,33 @@ int main(){
         {
             slarge= arr[i];
         }
-        
-        
+ 
     }
 
     cout<<grt<<" is the greatest in the given array"<<endl;
-    cout<<slarge;
+    cout<<slarge <<" is the second largest";
 }
+*/
+
+// rveversing an array
+/*
+int main(){
+
+  int arr[5]= {10,5,60,8,100};
+  int narr[5];
+    int j=0;
+  for (int i =4; i >=0; i--)
+  {
+    narr[j]= arr[i];
+    j++;
+  }
+
+  for (int i = 0; i < 5; i++)
+  {
+    cout<<narr[i]<<" ";
+  }
+  return 0;
+
+}
+
+*/
