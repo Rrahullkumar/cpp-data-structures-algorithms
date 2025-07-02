@@ -73,6 +73,7 @@ int main(){
 */
 
 // Finding second smallest 
+/*
 int main(){
 
   int arr[4]= {10,5,60,8};
@@ -99,3 +100,52 @@ int main(){
 
   cout<<secondSmallest<<" is the second smallest elem";
 }
+*/
+
+// Checking if an array is sorted or not
+/*
+int main(){
+
+  int arr[5]= {1,2,1,4,1};
+  bool isSorted= true;
+
+  for (int i = 0; i < 4; i++)
+  {
+    // cout<<arr[i] << " ";
+
+    if (arr[i]>arr[i+1])
+    {
+      isSorted= false;
+      break;
+    }  
+    
+  }
+  cout<< isSorted<<" ";
+
+}
+*/
+
+// Remove duplicates from an given sorted array without making new array
+// two pointer approach
+int main(){
+
+  int arr[8] ={ 1,2,2,3,3,3,1,1};
+  int i= 0;
+
+  for (int j = 1; j < 8; j++)
+  {
+    if (arr[i]!= arr[j])
+    {
+      arr[i+1] = arr[j];
+      i++;
+    }
+  }
+  cout<<arr[0]<<" " <<arr[1]<< " "<<arr[2] <<endl;     //rest will be the random reamining elements
+
+  for (int k = 0; k < i; k++)
+  {
+    cout<<arr[k];
+  }
+  
+}
+
