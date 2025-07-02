@@ -71,3 +71,31 @@ int main(){
 }
 
 */
+
+// Finding second smallest 
+int main(){
+
+  int arr[4]= {10,5,60,8};
+  int sml= arr[0];
+
+  int secondSmallest = 0;
+
+  for (int i = 0; i < 4; i++)
+  {
+    
+    if (arr[i]<sml)
+    {
+      secondSmallest=sml;
+      sml= arr[i];
+    }
+    if (arr[i]<secondSmallest && arr[i] != sml)
+    {
+      secondSmallest = arr[i];
+    }
+    
+  }
+  
+  cout<<sml<< "  is the smallest element" <<endl;
+
+  cout<<secondSmallest<<" is the second smallest elem";
+}
