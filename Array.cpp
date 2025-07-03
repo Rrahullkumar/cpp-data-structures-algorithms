@@ -127,6 +127,7 @@ int main(){
 
 // Remove duplicates from an given sorted array without making new array
 // two pointer approach
+/*
 int main(){
 
   int arr[8] ={ 1,2,2,3,3,3,1,1};
@@ -148,4 +149,8 @@ int main(){
   }
   
 }
+
+*/
+
+// to be continue  .. after completing all sorting algos...
 
