@@ -152,5 +152,30 @@ int main(){
 
 */
 
-// to be continue  .. after completing all sorting algos...
+
+// Left rotate the array by one place
+// eg : input: [1,2,3,4,5]
+// output: [2,3,4,5,1]
+
+int main(){
+
+  int arr[5]= {1,2,3,4,5};
+
+  int temp = arr[0];
+                                    // Index: 0   1   2   3   4
+  for (int i = 1; i < 5; i++)       //Original: [1, 2, 3, 4, 5]
+  {                                 //After shift: [2, 3, 4, 5, ?]
+    arr[i-1] = arr[i];
+  }
+
+  arr[4]= temp;
+
+  for (int j = 0; j < 5; j++)
+  {
+    cout<<arr[j]<<" ";
+  }
+  
+  
+
+}
 
