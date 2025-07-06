@@ -5,7 +5,7 @@ using namespace std;
 /*
 int main(){
 
-    // palendrome
+    // palindrome
     char a[] = "level";
     bool isPalindrome = false;
 
@@ -180,7 +180,7 @@ int main(){
 */
 
 #include <algorithm> // For reverse
-
+/*
 int main() {
     int matrix[4][4] = {
         {1, 2, 3, 4}, 
@@ -214,3 +214,44 @@ int main() {
 
     return 0;
 }
+*/
+
+// palindrome
+/*
+int main(){
+    string s= "level";
+    bool isPalindrome = true;
+    int length = s.length();
+
+    for (int i = 0; i <length; i++)
+    {
+        if (s[i] != s[length-1-i])
+        {
+            isPalindrome = false;
+        }
+        
+    }
+    cout<<isPalindrome<<endl;
+    cout<<length;
+}
+*/
+
+// reversing string
+/*
+int main(){
+
+    string s= "asdfghjkl";
+    int n = s.length();
+    int end = n-1;
+
+    for (int i = 0; i < n/2 ; i++, end--)
+    {
+        char temp = s[i];
+        s[i] = s[end];
+        s[end]= temp;
+        
+    }
+    cout<<s;
+
+}
+*/
