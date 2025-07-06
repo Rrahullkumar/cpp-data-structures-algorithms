@@ -1,5 +1,5 @@
-#include<iostream>
-#include<cmath>
+#include <iostream>
+#include <cmath>
 #include <cstring>
 using namespace std;
 /*
@@ -16,9 +16,9 @@ int main(){
         {
             isPalindrome = true;
         }
-        
+
     }
-    cout<<isPalindrome; 
+    cout<<isPalindrome;
 }
 */
 
@@ -27,8 +27,8 @@ int main(){
 int main(){
 
     char str[]= "Rahul";
-    int n=strlen(str); 
-    int end = n - 1; 
+    int n=strlen(str);
+    int end = n - 1;
 
     for (int i = 0; i < end; i++, end--)
     {
@@ -58,10 +58,10 @@ int main(){
             {
                 count++;
             }
-            
+
         }
-        cout<<ch<<":"<<count<<endl;      
-    }  
+        cout<<ch<<":"<<count<<endl;
+    }
 }
 */
 
@@ -86,15 +86,15 @@ int main(){
                 slast=last;
                 last = j;
             }
-            
+
         }
-        
+
         if (slast != 0)
         cout<<"second last occurance of " <<ch << " : " <<slast <<endl;
         else
         cout<<"no second last occurance";
     }
-    
+
 
 }
 
@@ -102,7 +102,7 @@ int main(){
 
 // >>>>>>>>>>>>>>>>>array<<<<<<<<<<<<<<<<<<
 // Finding duplicate elements
-
+/*
 int main(){
 
     int arr[5]= {1,5,3,4,5};
@@ -118,10 +118,99 @@ int main(){
                 isDuplicate =true;
                 break;
             }
-            
-        }     
-        
+
+        }
+
     }
 
-    cout<<isDuplicate; 
+    cout<<isDuplicate;
+}
+
+*/
+
+// Finding second largest element in an array
+/*
+int main(){
+
+    int arr[5] ={10,50,40,20,30};
+    int largest = arr[0];
+    int secondLargest = -1;
+
+    for (int i = 1; i < 5; i++)
+    {
+        if (arr[i]>largest)
+        {
+            secondLargest = largest;
+            largest = arr[i];
+        }
+        if (arr[i]!=largest && arr[i]>secondLargest)
+        {
+            secondLargest= arr[i];
+        }
+
+
+    }
+
+    cout<<largest<<" is the largest"<<endl;
+    cout<< secondLargest <<" is the second largest"<<endl;
+
+}
+*/
+
+// Rotation of an array
+/*
+int main(){
+
+    int arr[5] ={1,2,3,4,5};
+    int n=5;
+    int j=0;
+    int temp = arr[0];
+
+    for (int i = 1; i < n; i++, j++)
+    {
+        arr[j]= arr[i];
+    }
+    arr[4]= temp;
+
+    for (int k = 0; k < n; k++)
+    {
+        cout<<arr[k];
+    }
+}
+*/
+
+#include <algorithm> // For reverse
+
+int main() {
+    int matrix[4][4] = {
+        {1, 2, 3, 4}, 
+        {5, 6, 7, 8}, 
+        {9, 10, 11, 12}, 
+        {13, 14, 15, 16}
+    };
+
+    int n = 4;
+
+    // Transpose the matrix
+    for (int i = 0; i < n; i++) {
+        for (int j = i+1; j < n; j++) {
+            swap(matrix[i][j], matrix[j][i]);
+        }
+    }
+
+    // Reverse each row
+    for (int i = 0; i < n; i++) {
+        reverse(matrix[i], matrix[i] + n);
+    }
+
+    // Print the rotated matrix
+    cout << "Rotated Matrix:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
