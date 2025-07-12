@@ -35,7 +35,7 @@ int main(){
 */
 
 // Bubble sort : Push the maximum to the last by adjecent swaps
-
+/*
 int main(){
 
     int arr[6] = {10,50,20,30,15,25};
@@ -62,4 +62,34 @@ int main(){
         cout<<arr[i]<<endl;
     }
     
+}
+*/
+
+// Insertion sort:  Takes an element and places it in it's correct position
+
+int main(){
+
+    int arr[6] = {12,5,30,60,10,15};
+
+    int n= 6;
+
+    for (int i = 0; i < n; i++)
+    {
+        int j=i;
+        while (j>0 && arr[j-1] > arr[j])
+        {
+            int temp = arr[j];
+            arr[j]= arr[j-1];
+            arr[j-1]= temp;
+            j--;
+        }
+        
+    }
+    
+    for (int i = 0; i < n; i++)
+    {
+        cout<<arr[i]<<endl;
+    }
+    
+
 }
