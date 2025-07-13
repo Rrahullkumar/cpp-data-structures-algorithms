@@ -66,7 +66,7 @@ int main(){
 */
 
 // Insertion sort:  Takes an element and places it in it's correct position
-
+/*
 int main(){
 
     int arr[6] = {12,5,30,60,10,15};
@@ -89,7 +89,9 @@ int main(){
     for (int i = 0; i < n; i++)
     {
         cout<<arr[i]<<endl;
-    }
-    
-
+    }   
 }
+*/
+
+// Merge sort :  Divide and merge
+
