@@ -95,3 +95,62 @@ int main(){
 
 // Merge sort :  Divide and merge
 
+// Merge two sorted parts
+void merge(int arr[], int low, int mid, int high) {
+    int leftSize = mid - low + 1;
+    int rightSize = high - mid;
+
+    int left[leftSize], right[rightSize];
+
+    // Copy elements in left[]
+    for (int i = 0; i < leftSize; i++)
+        left[i] = arr[low + i];
+
+    // Copy elements in right[]
+    for (int j = 0; j < rightSize; j++)
+        right[j] = arr[mid + 1 + j];
+
+    // Merge logic
+    int i = 0, j = 0, k = low;
+
+    while (i < leftSize && j < rightSize) {
+        if (left[i] <= right[j])
+            arr[k++] = left[i++];
+        else
+            arr[k++] = right[j++];
+    }
+
+    // Copy remaining left
+    while (i < leftSize)
+        arr[k++] = left[i++];
+
+    // Copy remaining right
+    while (j < rightSize)
+        arr[k++] = right[j++];
+}
+
+// Merge Sort Recursive
+void mergeSort(int arr[], int low, int high) {
+    if (low >= high)
+        return;
+
+    int mid = (low + high) / 2; // ✅ Mid calculated your way
+
+    mergeSort(arr, low, mid);       // Sort left
+    mergeSort(arr, mid + 1, high);  // Sort right
+    merge(arr, low, mid, high);     // Merge both
+}
+
+int main() {
+    int arr[] = {10, 5, 30, 15, 7, 60, 20};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    mergeSort(arr, 0, n - 1);
+
+    cout << "Sorted Array: ";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+
+    return 0;
+}
+
